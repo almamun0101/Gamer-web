@@ -2,12 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import Cart from "../Cart/Cart";
 const Navbar = () => {
-  const [cartCount, setCartCount] = useState(0); // Cart count state
+  const [cartCount, ] = useState(0); // Cart count state
   const [menuOpen, setMenuOpen] = useState(false); // State for mobile menu toggle
-
-  const handleCartClick = () => {
-    alert("Go to the cart page!");
-  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -46,9 +42,12 @@ const Navbar = () => {
         </div>
 
         {/* Cart Icon */}
-        <div className="flex items-center cursor-pointer ml-4" onClick={handleCartClick}>
+        <div className="flex items-center cursor-pointer ml-4" >
+        <Link to="/cart" className="text-lg hover:text-gray-200">
+             
           <span className="text-2xl text-white mr-2">🛒</span>
           <span className="text-sm bg-red-500 text-white rounded-full px-2 py-1">{cartCount}</span>
+            </Link>
         </div>
       </div>
 
