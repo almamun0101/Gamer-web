@@ -29,7 +29,7 @@ const Cart = () => {
   const finalTotal = totalPrice - discount + charge;
 
   return (
-    <div className="p-6 max-w-6xl mx-auto bg-white rounded-lg shadow-md flex gap-6 h-full">
+    <div className="max-w-6xl mx-auto bg-white rounded-lg  flex gap-6 h-screen">
       {/* Product List */}
       <div className="w-2/3">
         <h1 className="text-2xl font-bold mb-4 text-center">Product List</h1>
@@ -64,7 +64,7 @@ const Cart = () => {
       </div>
 
       {/* Summary */}
-      <div className="w-1/3 p-4 bg-gray-100 rounded-lg shadow-inner">
+      <div className="w-1/3 h-2/3 p-4 bg-gray-100 rounded-lg shadow-inner">
         <h2 className="text-xl font-bold mb-4">Order Summary</h2>
         <p className="text-gray-700">Total Price: <span className="font-semibold">${totalPrice.toFixed(2)}</span></p>
         <p className="text-gray-700">Discount: <span className="font-semibold text-red-500">-${discount.toFixed(2)}</span></p>
