@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Slideshow from "./Slideshow";
 import Category from "./Category";
 import Product from "./Product";
-import Cart from "./Cart";
 
 const products = [
   {

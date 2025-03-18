@@ -33,7 +33,7 @@ const Slideshow = () => {
   return (
     <div className="container">
 
-    <div className="relative w-full max-w-large mx-auto py-5 px-20">
+    <div className="relative w-full max-w-large mx-auto py-5">
       {/* Image Display */}
       <img
         src={images[currentIndex]}

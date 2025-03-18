@@ -29,7 +29,7 @@ const Cart = () => {
   const finalTotal = totalPrice - discount + charge;
 
   return (
-    <div className="p-6 max-w-6xl mx-auto bg-white rounded-lg shadow-md flex gap-6">
+    <div className="p-6 max-w-6xl mx-auto bg-white rounded-lg shadow-md flex gap-6 h-full">
       {/* Product List */}
       <div className="w-2/3">
         <h1 className="text-2xl font-bold mb-4 text-center">Product List</h1>

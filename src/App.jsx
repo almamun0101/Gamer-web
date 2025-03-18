@@ -3,7 +3,8 @@ import Navbar from "./Home/Navbar";
 import Home from "./Home/Home";
 import About from "./About";
 import Contact from "./Contact";
-import Cart from "./Home/Cart";
+import Cart from "./Cart/Cart";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -18,7 +19,9 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
+    <Footer/>
     </Router>
+
   );
 };
 

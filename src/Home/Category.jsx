@@ -13,7 +13,7 @@ const Category = ({ selectedCategory, onSelectCategory }) => {
   ];
 
   return (
-    <div className="container text-left flex justify-between">
+    <div className="container text-left lg:flex justify-between">
       {/* Heading */}
       <h2 className="text-2xl font-bold text-gray-800 uppercase tracking-wide mb-6">
         Category

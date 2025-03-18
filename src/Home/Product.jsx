@@ -10,7 +10,7 @@ const Product = ({ product }) => {
 
   return (
     <div className="max-w-xs rounded-lg shadow-lg overflow-hidden border border-gray-200 ">
-      <img src={product.image} alt={product.name} className="w-full h-90 object-cover rounded-md" />
+      <img src={product.image} alt={product.name} className="w-60 h-70 object-cover rounded-md" />
       <div className="p-5">
 
       <h3 className="text-xl font-semibold text-gray-800 mt-4">{product.name}</h3>
