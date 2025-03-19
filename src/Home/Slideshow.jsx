@@ -31,7 +31,7 @@ const Slideshow = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container pt-10">
 
     <div className="relative w-full max-w-large mx-auto py-5">
       {/* Image Display */}
