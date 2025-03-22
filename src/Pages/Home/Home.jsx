@@ -1,8 +1,8 @@
 // Home.js
 import React, { useState } from "react";
 import Slideshow from "./Slideshow";
-import Category from "./Category";
-import Product from "./Product";
+import Category from "../Products/Category";
+import Product from "../Products/Product";
 import { products   } from "../Products/Products";
 
 function Home({ onAddToCart }) {

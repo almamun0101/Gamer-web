@@ -6,7 +6,7 @@ import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import Cart from "./Pages/Cart/Cart";
 import Footer from "./Footer";
-import { Games } from "./Pages/Games/Games";
+import Games from "./Pages/Games/Games";
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -31,7 +31,7 @@ const App = () => {
       <div className="p-4">
         <Routes>
           <Route path="/" element={<Home onAddToCart={handleCartUpdate} />} />
-          <Route path="/games" element={<Games />} />
+          <Route path="/games" element={<Games onAddToCart={handleCartUpdate} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart cartItems={cartItems} />} />
