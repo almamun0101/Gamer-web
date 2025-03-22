@@ -25,8 +25,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/cart" className="text-lg hover:text-gray-200">
-              All
+            <Link to="/games" className="text-lg hover:text-gray-200">
+              Games
             </Link>
           </li>
           <li>
