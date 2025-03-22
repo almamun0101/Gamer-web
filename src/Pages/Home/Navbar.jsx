@@ -26,7 +26,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/cart" className="text-lg hover:text-gray-200">
-              Cart
+              All
             </Link>
           </li>
           <li>

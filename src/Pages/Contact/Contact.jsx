@@ -21,15 +21,15 @@ const Contact = () => {
           <form action="submit_contact.php" method="POST" className="space-y-4">
             <div>
               <label htmlFor="name" className="block font-medium">Name:</label>
-              <input type="text" id="name" name="name" required className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md" />
+              <input type="text" id="name" name="name" required className="w-full p-2 border border-gray-600 rounded-md" />
             </div>
             <div>
               <label htmlFor="email" className="block font-medium">Email:</label>
-              <input type="email" id="email" name="email" required className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md" />
+              <input type="email" id="email" name="email" required className="w-full p-2 border border-gray-600 rounded-md" />
             </div>
             <div>
               <label htmlFor="message" className="block font-medium">Message:</label>
-              <textarea id="message" name="message" rows="5" required className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md"></textarea>
+              <textarea id="message" name="message" rows="5" required className="w-full p-2 border border-gray-600 rounded-md"></textarea>
             </div>
             <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Send Message</button>
           </form>
