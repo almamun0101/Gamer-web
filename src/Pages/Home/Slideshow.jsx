@@ -18,12 +18,6 @@ const Slideshow = () => {
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
-//   const prevSlide = () => {
-//     setCurrentIndex((prevIndex) =>
-//       prevIndex === 0 ? images.length - 1 : prevIndex - 1
-//     );
-//   };
-
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
@@ -41,21 +35,7 @@ const Slideshow = () => {
         className="w-full h-64 md:h-110 object-cover rounded-lg shadow-lg transition-opacity duration-500"
       />
 
-      {/* Previous & Next Buttons */}
-      {/* <div className="absolute inset-0 flex items-center justify-between px-4">
-        <button
-          onClick={prevSlide}
-          className="bg-black bg-opacity-20 hover:bg-opacity-50 text-white p-2 rounded-full"
-        >
-          ◀
-        </button>
-        <button
-          onClick={nextSlide}
-          className="bg-black bg-opacity-20 hover:bg-opacity-50 text-white p-2 rounded-full"
-        >
-          ▶
-        </button>
-      </div> */}
+     
 
       {/* Dots Navigation */}
       <div className="absolute bottom-10 left-0 right-0 flex justify-center space-x-2">

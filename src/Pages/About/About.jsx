@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="container min-h-screen bg-white text-black p-6">
+    <div className="container min-h-screen bg-white text-black pt-20">
       <h1 className="text-4xl font-bold text-center mb-6">About Gamer Zone</h1>
       <div className="flex flex-col md:flex-row items-center w-full">
         <div className="w-full text-left p-4">

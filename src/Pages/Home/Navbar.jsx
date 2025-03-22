@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" top-0 left-0 w-full z-50 p-3 bg-gradient-to-r from-indigo-500 via-blue-600 to-teal-500 text-white">
+    <nav className="fixed top-0 left-0 w-full z-50 p-3 bg-gradient-to-r from-indigo-500 via-blue-600 to-teal-500 text-white">
       <div className="container flex justify-between items-center">
         {/* Logo */}
         <div className="logo">

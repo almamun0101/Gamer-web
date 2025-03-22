@@ -7,7 +7,7 @@ function Cart({ cartItems = [], onRemoveItem, onIncreaseQuantity, onDecreaseQuan
   );
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto h-screen pt-20">
       <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
 
       {cartItems.length > 0 ? (

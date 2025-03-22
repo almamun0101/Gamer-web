@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Slideshow from "./Slideshow";
 import Category from "./Category";
 import Product from "./Product";
-import { products } from "../Products/Products";
+import { products   } from "../Products/Products";
 
 function Home({ onAddToCart }) {
   const [selectedCategory, setSelectedCategory] = useState(null);
