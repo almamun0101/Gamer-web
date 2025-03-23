@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Slideshow from "./Slideshow";
 import Category from "../Products/Category";
 import Product from "../Products/Product";
-import { products   } from "../Products/Products";
+import { products } from "../Products/Products";
 
 function Home({ onAddToCart }) {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -16,14 +16,17 @@ function Home({ onAddToCart }) {
     ? products.filter((product) => product.category === selectedCategory)
     : products;
 
+  // Limit to the first 10 products
+  const limitedProducts = filteredProducts.slice(0, 8);
+
   return (
     <>
       <Slideshow />
       <Category selectedCategory={selectedCategory} onSelectCategory={handleCategorySelect} />
 
       <div className="container flex justify-center flex-wrap gap-6 p-6">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
+        {limitedProducts.length > 0 ? (
+          limitedProducts.map((product) => (
             <Product key={product.id} product={product} onAddToCart={() => onAddToCart(product)} />
           ))
         ) : (
