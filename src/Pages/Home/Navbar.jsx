@@ -10,6 +10,10 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -34,26 +38,10 @@ const Navbar = () => {
 
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex space-x-6">
-          <li>
-            <Link to="/" className="text-lg hover:text-gray-200">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/games" className="text-lg hover:text-gray-200">
-              Games
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="text-lg hover:text-gray-200">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="text-lg hover:text-gray-200">
-              Contact
-            </Link>
-          </li>
+          <li><Link to="/" className="text-lg hover:text-gray-200">Home</Link></li>
+          <li><Link to="/games" className="text-lg hover:text-gray-200">Games</Link></li>
+          <li><Link to="/about" className="text-lg hover:text-gray-200">About</Link></li>
+          <li><Link to="/contact" className="text-lg hover:text-gray-200">Contact</Link></li>
         </ul>
 
         {/* Mobile Menu Toggle Button */}
@@ -73,26 +61,10 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <ul className="md:hidden absolute top-14 left-0 w-full text-left bg-gradient-to-r from-indigo-500 via-blue-600 to-teal-500 text-white p-4 space-y-4">
-          <li>
-            <Link to="/" className="text-lg hover:text-gray-200 border-b-1 pb-1 block">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/games" className="text-lg hover:text-gray-200 border-b-1 pb-1 block">
-              Games
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="text-lg hover:text-gray-200  border-b-1 pb-1 block">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="text-lg hover:text-gray-200 block">
-              Contact
-            </Link>
-          </li>
+          <li><Link to="/" className="text-lg hover:text-gray-200 block" onClick={closeMenu}>Home</Link></li>
+          <li><Link to="/games" className="text-lg hover:text-gray-200 block" onClick={closeMenu}>Games</Link></li>
+          <li><Link to="/about" className="text-lg hover:text-gray-200 block" onClick={closeMenu}>About</Link></li>
+          <li><Link to="/contact" className="text-lg hover:text-gray-200 block" onClick={closeMenu}>Contact</Link></li>
         </ul>
       )}
     </nav>
