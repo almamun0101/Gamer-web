@@ -1,16 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-// import Cart from "../Cart/Cart";
+
 const Navbar = () => {
-  const [cartCount, ] = useState(0); // Cart count state
+  const [cartCount] = useState(0); // Cart count state
   const [menuOpen, setMenuOpen] = useState(false); // State for mobile menu toggle
+  const navbarRef = useRef(null);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 p-3 bg-gradient-to-r from-indigo-500 via-blue-600 to-teal-500 text-white">
+    <nav ref={navbarRef} className="fixed top-0 left-0 w-full z-50 p-3 bg-gradient-to-r from-indigo-500 via-blue-600 to-teal-500 text-white">
       <div className="container flex justify-between items-center">
         {/* Logo */}
         <div className="logo">
@@ -47,35 +62,34 @@ const Navbar = () => {
         </div>
 
         {/* Cart Icon */}
-        <div className="flex items-center cursor-pointer ml-4" >
-        <Link to="/cart" className="text-lg hover:text-gray-200">
-             
-          <span className="text-2xl text-white mr-2">🛒</span>
-          <span className="text-sm bg-red-500 text-white rounded-full px-2 py-1">{cartCount}</span>
-            </Link>
+        <div className="flex items-center cursor-pointer ml-4">
+          <Link to="/cart" className="text-lg hover:text-gray-200">
+            <span className="text-2xl text-white mr-2">🛒</span>
+            <span className="text-sm bg-red-500 text-white rounded-full px-2 py-1">{cartCount}</span>
+          </Link>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="md:hidden absolute top-16 left-0 w-full bg-gradient-to-r from-indigo-500 via-blue-600 to-teal-500 text-white p-4 space-y-4">
+        <ul className="md:hidden absolute top-14 left-0 w-full text-left bg-gradient-to-r from-indigo-500 via-blue-600 to-teal-500 text-white p-4 space-y-4">
           <li>
-            <Link to="/" className="text-lg hover:text-gray-200">
+            <Link to="/" className="text-lg hover:text-gray-200 border-b-1 pb-1 block">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/shop" className="text-lg hover:text-gray-200">
-              Shop
+            <Link to="/games" className="text-lg hover:text-gray-200 border-b-1 pb-1 block">
+              Games
             </Link>
           </li>
           <li>
-            <Link to="/about" className="text-lg hover:text-gray-200">
+            <Link to="/about" className="text-lg hover:text-gray-200  border-b-1 pb-1 block">
               About
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="text-lg hover:text-gray-200">
+            <Link to="/contact" className="text-lg hover:text-gray-200 block">
               Contact
             </Link>
           </li>
