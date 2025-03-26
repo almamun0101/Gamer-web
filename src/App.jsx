@@ -28,6 +28,27 @@ const App = () => {
     });
   };
 
+  const onIncreaseQuantity = (id) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, count: item.count + 1 } : item
+      )
+    );
+  };
+
+  const onDecreaseQuantity = (id) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id && item.count > 1
+          ? { ...item, count: item.count - 1 }
+          : item
+      )
+    );
+  };
+
+  const onRemoveItem = (id) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
   return (
     <Router>
       <Navbar  cartCount={totalItemCount}/>
@@ -37,7 +58,13 @@ const App = () => {
           <Route path="/games" element={<Games onAddToCart={handleCartUpdate} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<Cart cartItems={cartItems} />} />
+          <Route path="/cart" element={ <Cart
+        cartItems={cartItems}
+        onIncreaseQuantity={onIncreaseQuantity}
+        onDecreaseQuantity={onDecreaseQuantity}
+        onRemoveItem={onRemoveItem}
+      />} />
+          
         </Routes>
       </div>
       <Footer />

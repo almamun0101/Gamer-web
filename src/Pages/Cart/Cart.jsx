@@ -1,10 +1,14 @@
 import React from "react";
+import { Trash2 } from "lucide-react";
 
 function Cart({ cartItems = [], onRemoveItem, onIncreaseQuantity, onDecreaseQuantity }) {
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.price * item.count,
     0
   );
+ 
+ 
+
 
   return (
     <div className="container mx-auto h-screen pt-20 px-4 sm:px-6 lg:px-8">
@@ -15,24 +19,24 @@ function Cart({ cartItems = [], onRemoveItem, onIncreaseQuantity, onDecreaseQuan
           {cartItems.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col sm:flex-row sm:justify-between gap-4 sm:gap-30"
+              className="flex sm:flex-row sm:justify-between gap-4 sm:gap-30"
             >
               {/* Left side: Product Name */}
               <div className="flex-1">
-                <p className="text-lg font-medium">{item.name}</p>
+                <p className="text-base font-medium">{item.name}</p>
               </div>
 
               {/* Center: Quantity and Buttons */}
-              <div className="flex justify-center items-center space-x-4">
+              <div className="flex justify-center items-center space-x-3">
                 <button
-                  className="bg-yellow-500 text-white px-2 py-1 rounded"
+                  className="bg-yellow-500 text-white px-2 rounded"
                   onClick={() => onDecreaseQuantity(item.id)}
                 >
                   -
                 </button>
                 <p className="text-lg font-medium">{item.count}</p>
                 <button
-                  className="bg-blue-500 text-white px-2 py-1 rounded"
+                  className="bg-blue-500 text-white px-2 rounded"
                   onClick={() => onIncreaseQuantity(item.id)}
                 >
                   +
@@ -42,10 +46,10 @@ function Cart({ cartItems = [], onRemoveItem, onIncreaseQuantity, onDecreaseQuan
               {/* Right side: Price */}
               <div className="flex items-center space-x-2">
                 <button
-                  className="bg-red-500 text-white px-2 py-1 rounded"
+                  className="bg-red-500 text-white p-1 rounded flex items-center justify-center"
                   onClick={() => onRemoveItem(item.id)}
                 >
-                  Remove
+                  <Trash2 size={20} />
                 </button>
                 <p className="text-lg font-semibold">
                   ${(item.price * item.count).toFixed(2)}
