@@ -5,7 +5,7 @@ import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import Cart from "./Pages/Cart/Cart";
-import Footer from "./Footer";
+import Footer from "./Pages/Footer/Footer";
 import Games from "./Pages/Games/Games";
 
 const App = () => {

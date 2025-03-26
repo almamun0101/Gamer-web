@@ -31,7 +31,7 @@ const Navbar = ({ cartCount }) => { // Receiving cartCount as prop
       <div className="container flex justify-between items-center">
         {/* Logo */}
         <div className="logo">
-          <h2 className="text-2xl font-bold">My Shop</h2>
+          <h2 className="text-2xl font-bold">Game Zone</h2>
         </div>
 
         {/* Desktop Navigation Links */}

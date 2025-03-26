@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-4">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center p-10">
           <div>
             <h2 className="text-2xl font-bold">Gamer Zone</h2>
             <p className="text-sm">Your ultimate gaming destination</p>
@@ -35,9 +35,9 @@ const Footer = () => {
               Privacy Policy
             </a>
           </div>
-        </div>
         <div className="mt-6 text-center text-sm text-gray-400">
           <p>© 2025 Gamer Zone. All Rights Reserved.</p>
+        </div>
         </div>
       </div>
     </footer>
