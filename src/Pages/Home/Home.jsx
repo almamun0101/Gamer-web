@@ -23,7 +23,7 @@ function Home({ onAddToCart }) {
     : products;
 
   // Limit to the first 8 products
-  const limitedProducts = filteredProducts.slice(0, 8);
+  const limitedProducts = filteredProducts.slice(0, 10);
 
   return (
     <>

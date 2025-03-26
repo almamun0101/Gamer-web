@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
-  const [cartCount] = useState(0); // Cart count state
-  const [menuOpen, setMenuOpen] = useState(false); // State for mobile menu toggle
+const Navbar = ({ cartCount }) => { // Receiving cartCount as prop
+  const [menuOpen, setMenuOpen] = useState(false);
   const navbarRef = useRef(null);
 
   const toggleMenu = () => {
@@ -14,7 +13,6 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
-  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target)) {

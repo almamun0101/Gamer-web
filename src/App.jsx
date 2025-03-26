@@ -9,7 +9,10 @@ import Footer from "./Footer";
 import Games from "./Pages/Games/Games";
 
 const App = () => {
+  
   const [cartItems, setCartItems] = useState([]);
+  const totalItemCount = cartItems.reduce((acc,item)=> acc+ item.count,0);
+  
 
   const handleCartUpdate = (product) => {
     setCartItems((prevCart) => {
@@ -27,7 +30,7 @@ const App = () => {
 
   return (
     <Router>
-      <Navbar />
+      <Navbar  cartCount={totalItemCount}/>
       <div className="p-4">
         <Routes>
           <Route path="/" element={<Home onAddToCart={handleCartUpdate} />} />
