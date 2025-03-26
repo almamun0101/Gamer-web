@@ -13,27 +13,31 @@ const Category = ({ selectedCategory, onSelectCategory }) => {
   ];
 
   return (
-    <div className="container text-left lg:flex justify-between">
+    <div className="container">
       {/* Heading */}
       <h2 className="text-2xl font-bold text-gray-800 uppercase tracking-wide mb-6">
         Category
       </h2>
-      <div>
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => onSelectCategory(category)}
-            className={`px-4 py-2 m-2 text-sm rounded-md transition-all duration-300 ${
-              selectedCategory === category
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-200 text-black'
-            } hover:bg-blue-500 hover:text-white`}
-          >
-            {category}
-          </button>
-        ))}
+
+      {/* Category List */}
+      <div className="lg:flex lg:justify-between">
+        {/* Scrollable categories for mobile */}
+        <div className="lg:flex lg:w-full lg:overflow-visible flex overflow-x-auto space-x-4 pb-2 lg:pb-0">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => onSelectCategory(category)}
+              className={`px-4 py-2 text-sm rounded-md transition-all duration-300 ${
+                selectedCategory === category
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-200 text-black'
+              } hover:bg-blue-500 hover:text-white`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </div>
-     
     </div>
   );
 };
